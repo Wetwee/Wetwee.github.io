@@ -3,17 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Интеграл БПМ — О. Мирный</title>
+  <title>Глава 1 — О. Мирный</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-MathJax = {
-  tex: {
-    inlineMath: [["$", "$"]],
-    displayMath: [["$$", "$$"]]
-  }
-};
-  </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -22,43 +13,58 @@ MathJax = {
   <p class="site-tagline">Геометрия феррического вакуума</p>
   <nav class="site-nav">
     <ul>
-      <li><a href="index.html">Статьи</a></li>
-      <li><a href="chapter1.html">Интеграл БПМ</a></li>
+      <li><a href="index.html">Главы</a></li>
       <li><a href="about.html">О книге</a></li>
     </ul>
   </nav>
 </header>
 
-<main class="site-main">
+<div class="paper-page">
+  <h1>Глава 1. Интеграл БПМ и коэрцитивный порог</h1>
+  <div class="paper-meta">12 стр. · PDF · сентябрь 2026 · Мирный · Бородин · Прейзах</div>
 
-  <article>
-    <h1>Интеграл БПМ и коэрцитивный порог Прейзаха–Мирного</h1>
-    <div class="post-meta">27 сентября 2026 · Мирный · Бородин · Прейзах</div>
+  <div class="paper-preview">
+    <canvas id="pdf-canvas"></canvas>
+  </div>
 
-    <h2>Постановка задачи</h2>
-    <p>Рассмотрим интеграл, связывающий коэрцитивный порог Прейзаха–Мирного с постоянной тонкой структуры:</p>
+  <div class="paper-actions">
+    <a class="btn btn-primary" href="reader.html?file=chapter1">Читать онлайн</a>
+    <a class="btn" href="papers/chapter1.pdf" download>Скачать PDF</a>
+  </div>
 
-    <p>$$K_{ret} = \int_0^{H_{PM}} \frac{\sinh(H)}{H} \cdot \exp\!\left(\frac{1}{H_{PM}}\right) \frac{4\pi^2}{\sqrt{3}} \to 137.036$$</p>
-
-    <p>где $$H_{PM} = \pi - \frac{1}{\varphi} \approx 2.5236$$ — коэрцитивный порог Прейзаха–Мирного.</p>
-
-    <h2>Обсуждение</h2>
-    <p>Интеграл БПМ (Бородина–Прейзаха–Мирного) связывает геометрию золотого сечения $\varphi$ с фундаментальной константой $\alpha^{-1} \approx 137.036$. Ключевая идея состоит в том, что постоянная тонкой структуры не является произвольным параметром, а вытекает из топологических свойств вакуума как гистерезисной среды.</p>
-
-    <p>Коэрцитивный порог $H_{PM}$ определяется через разность $\pi$ и обратного золотого сечения, что указывает на глубокую связь между геометрией и физикой ферритного вакуума.</p>
-
-    <div class="post-nav">
-      <a href="index.html">← К списку статей</a>
-      <a href="chapter2.html">Тороидальная модель →</a>
-    </div>
-  </article>
-
-</main>
+  <div class="post-nav" style="display:flex; justify-content:space-between; margin-top:30px; border-top:1px solid var(--border); padding-top:20px; font-size:0.9em;">
+    <a href="index.html" style="text-decoration:none; color:var(--text);">← К оглавлению</a>
+    <a href="chapter2.html" style="text-decoration:none; color:var(--text);">Глава 2 →</a>
+  </div>
+</div>
 
 <footer class="site-footer">
   <p>О. Мирный · Бородин · Прейзах · 2025–2026</p>
-  <p><a href="https://0mirny.wordpress.com">Основной блог на WordPress</a></p>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+var canvas = document.getElementById("pdf-canvas");
+var ctx = canvas.getContext("2d");
+
+pdfjsLib.getDocument("papers/chapter1.pdf").promise.then(function(pdf) {
+  pdf.getPage(1).then(function(page) {
+    var viewport = page.getViewport({ scale: 1.5 });
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    page.render({ canvasContext: ctx, viewport: viewport });
+  });
+}).catch(function(err) {
+  canvas.style.display = "none";
+  var msg = document.createElement("p");
+  msg.style.color = "#999";
+  msg.style.fontStyle = "italic";
+  msg.textContent = "Превью будет доступно после загрузки PDF-файла в папку papers/";
+  document.querySelector(".paper-preview").appendChild(msg);
+});
+</script>
 
 </body>
 </html>
