@@ -3,41 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Глава 2 — Геометрия феррического вакуума</title>
+  <title>Глава 2 — О. Мирный</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-MathJax = {
-  tex: {
-    inlineMath: [["$", "$"]],
-    displayMath: [["$$", "$$"]]
-  }
-};
-  </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-  <header>
-    <h1><a href="index.html">Геометрия феррического вакуума</a></h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="chapter1.html">Глава 1</a></li>
-        <li><a href="chapter2.html">Глава 2</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <h1>Глава 2. Следующая глава</h1>
+<header class="site-header">
+  <h1 class="site-title"><a href="index.html">О. Мирный</a></h1>
+  <p class="site-tagline">Геометрия феррического вакуума</p>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Главы</a></li>
+      <li><a href="about.html">О книге</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <p>Здесь будет содержание второй главы.</p>
+<div class="paper-page">
+  <h1>Глава 2. Тороидальная гистерезисная модель континуума</h1>
+  <div class="paper-meta">18 стр. · PDF · сентябрь 2026 · Мирный · Бородин · Прейзах</div>
 
-  <div class="pager">
-    <a href="chapter1.html">← Глава 1</a>
-    <a href="chapter3.html">Глава 3 →</a>
+  <div class="paper-preview">
+    <canvas id="pdf-canvas"></canvas>
   </div>
 
-  <footer>
-    Геометрия феррического вакуума · 2025
-  </footer>
+  <div class="paper-actions">
+    <a class="btn btn-primary" href="reader.html?file=chapter2">Читать онлайн</a>
+    <a class="btn" href="papers/chapter2.pdf" download>Скачать PDF</a>
+  </div>
+
+  <div class="post-nav" style="display:flex; justify-content:space-between; margin-top:30px; border-top:1px solid var(--border); padding-top:20px; font-size:0.9em;">
+    <a href="chapter1.html" style="text-decoration:none; color:var(--text);">← Глава 1</a>
+    <a href="chapter3.html" style="text-decoration:none; color:var(--text);">Глава 3 →</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>О. Мирный · Бородин · Прейзах · 2025–2026</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+var canvas = document.getElementById("pdf-canvas");
+var ctx = canvas.getContext("2d");
+
+pdfjsLib.getDocument("papers/chapter2.pdf").promise.then(function(pdf) {
+  pdf.getPage(1).then(function(page) {
+    var viewport = page.getViewport({ scale: 1.5 });
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    page.render({ canvasContext: ctx, viewport: viewport });
+  });
+}).catch(function(err) {
+  canvas.style.display = "none";
+  var msg = document.createElement("p");
+  msg.style.color = "#999";
+  msg.style.fontStyle = "italic";
+  msg.textContent = "Превью будет доступно после загрузки PDF-файла в папку papers/";
+  document.querySelector(".paper-preview").appendChild(msg);
+});
+</script>
+
 </body>
 </html>
