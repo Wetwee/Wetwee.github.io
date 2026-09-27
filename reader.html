@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Чтение — О. Мирный</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="reader-back" href="index.html">← К оглавлению</a>
+<iframe class="reader-frame" id="reader"></iframe>
+
+<script>
+var params = new URLSearchParams(window.location.search);
+var file = params.get("file");
+var src = "papers/" + file + ".pdf";
+document.getElementById("reader").src = src;
+</script>
+
+</body>
+</html>
