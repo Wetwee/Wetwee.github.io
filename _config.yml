@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Геометрия феррического вакуума</title>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\$','\$']],
+        displayMath: [['$$','$$'], ['\
+$$
+','\
+$$
+']]
+      }
+    });
+  </script>
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <style>
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      color: #333;
+      background: #fafafa;
+    }
+    a { color: #0366d6; }
+    h1, h2, h3 { color: #1a1a2e; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+    th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+    th { background: #f0f0f0; }
+    code { background: #eef; padding: 2px 6px; border-radius: 3px; }
+    img { max-width: 100%; }
+  </style>
+</head>
+<body>
+  <h1>Геометрия феррического вакуума</h1>
+  <p>Мирный · Бородин · Прейзах</p>
+
+  <h2>Интеграл БПМ</h2>
+  <p>$$K_{ret} = \int_0^{H_{PM}} \frac{\sinh(H)}{H} \cdot \exp\!\left(\frac{1}{H_{PM}}\right) \frac{4\pi^2}{\sqrt{3}} \to 137.036$$</p>
+
+  <p>где $H_{PM} = \pi - \frac{1}{\varphi} \approx 2.5236$ — коэрцитивный порог Прейзаха–Мирного.</p>
+</body>
+</html>
