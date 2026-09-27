@@ -4,20 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Геометрия феррического вакуума</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
 MathJax = {
   tex: {
-    inlineMath: [['$', '$'], ['\$', '\$']],
-    displayMath: [['$$', '$$'], ['\
-$$
-', '\
-$$
-']]
+    inlineMath: [
+      ["$", "$"]
+    ],
+    displayMath: [
+      ["$$", "$$"]
+    ]
   }
 };
-  </script>
-  <script type="text/javascript" id="MathJax-script" async
-    src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js">
   </script>
   <style>
     body {
@@ -45,6 +44,6 @@ $$
   <h2>Интеграл БПМ</h2>
   <p>$$K_{ret} = \int_0^{H_{PM}} \frac{\sinh(H)}{H} \cdot \exp\!\left(\frac{1}{H_{PM}}\right) \frac{4\pi^2}{\sqrt{3}} \to 137.036$$</p>
 
-  <p>где $H_{PM} = \pi - \frac{1}{\varphi} \approx 2.5236$ — коэрцитивный порог Прейзаха–Мирного.</p>
+  <p>где $$H_{PM} = \pi - \frac{1}{\varphi} \approx 2.5236$$ — коэрцитивный порог Прейзаха–Мирного.</p>
 </body>
 </html>
