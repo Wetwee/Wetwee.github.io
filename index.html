@@ -4,46 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Геометрия феррического вакуума</title>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="style.css">
   <script>
 MathJax = {
   tex: {
-    inlineMath: [
-      ["$", "$"]
-    ],
-    displayMath: [
-      ["$$", "$$"]
-    ]
+    inlineMath: [["$", "$"]],
+    displayMath: [["$$", "$$"]]
   }
 };
   </script>
-  <style>
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.7;
-      color: #333;
-      background: #fafafa;
-    }
-    a { color: #0366d6; }
-    h1, h2, h3 { color: #1a1a2e; }
-    table { border-collapse: collapse; width: 100%; margin: 20px 0; }
-    th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
-    th { background: #f0f0f0; }
-    code { background: #eef; padding: 2px 6px; border-radius: 3px; }
-    img { max-width: 100%; }
-  </style>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-  <h1>Геометрия феррического вакуума</h1>
-  <p>Мирный · Бородин · Прейзах</p>
+  <header>
+    <h1><a href="index.html">Геометрия феррического вакуума</a></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="chapter1.html">Глава 1</a></li>
+        <li><a href="chapter2.html">Глава 2</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h2>Интеграл БПМ</h2>
-  <p>$$K_{ret} = \int_0^{H_{PM}} \frac{\sinh(H)}{H} \cdot \exp\!\left(\frac{1}{H_{PM}}\right) \frac{4\pi^2}{\sqrt{3}} \to 137.036$$</p>
+  <p class="meta">Мирный · Бородин · Прейзах</p>
 
-  <p>где $$H_{PM} = \pi - \frac{1}{\varphi} \approx 2.5236$$ — коэрцитивный порог Прейзаха–Мирного.</p>
+  <h2>Аннотация</h2>
+  <p>Книга посвящена геометрической интерпретации феррического вакуума и связи фундаментальных констант с топологическими инвариантами.</p>
+
+  <h2>Оглавление</h2>
+  <ul class="toc">
+    <li><a href="chapter1.html"><span class="toc-num">1.</span>Интеграл БПМ и коэрцитивный порог</a></li>
+    <li><a href="chapter2.html"><span class="toc-num">2.</span>Следующая глава</a></li>
+  </ul>
+
+  <footer>
+    Геометрия феррического вакуума · 2025
+  </footer>
 </body>
 </html>
