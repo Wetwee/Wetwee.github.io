@@ -28,8 +28,8 @@
   </div>
 
   <div class="paper-actions">
-    <a class="btn btn-primary" href="papers/Threshold%20as%20Emergence%20Zone%3A%20Universal%20Criterion_27.09.2026.pdf" target="_blank">Читать онлайн</a>
-    <a class="btn" href="papers/Threshold%20as%20Emergence%20Zone%3A%20Universal%20Criterion_27.09.2026.pdf" download>Скачать PDF</a>
+    <a class="btn btn-primary" href="papers/chapter1.pdf" target="_blank">Читать онлайн</a>
+    <a class="btn" href="papers/chapter1.pdf" download>Скачать PDF</a>
   </div>
 
   <div class="post-nav" style="display:flex; justify-content:space-between; margin-top:30px; border-top:1px solid var(--border); padding-top:20px; font-size:0.9em;">
@@ -49,7 +49,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs
 var canvas = document.getElementById("pdf-canvas");
 var ctx = canvas.getContext("2d");
 
-pdfjsLib.getDocument("papers/Threshold%20as%20Emergence%20Zone%3A%20Universal%20Criterion_27.09.2026.pdf").promise.then(function(pdf) {
+pdfjsLib.getDocument("papers/chapter1.pdf").promise.then(function(pdf) {
   pdf.getPage(1).then(function(page) {
     var viewport = page.getViewport({ scale: 1.5 });
     canvas.width = viewport.width;
