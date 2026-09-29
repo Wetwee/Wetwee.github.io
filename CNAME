@@ -1,4 +1,1 @@
-git add CNAME
-git commit -m "Add CNAME for mirny.space"
-git push origin main
-
+mirny.space
